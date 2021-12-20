@@ -22,8 +22,7 @@
     "react-helmet": "^6.1.0"
   },
   "devDependencies": {
-    "contentful-import": "^7.8.6",
-    "netlify-cli": "^2.54.0"
+    "contentful-import": "^7.8.6"
   },
   "engines": {
     "node": ">=14.0.0"
@@ -41,13 +40,11 @@
     "url": "git+https://github.com/contentful/starter-gatsby-blog.git"
   },
   "scripts": {
-    "dev": "gatsby develop",
+    "start": "gatsby develop",
     "build": "gatsby build",
     "heroku-postbuild": "gatsby build",
     "serve": "gatsby serve",
     "postinstall": "node ./bin/hello.js",
-    "setup": "node ./bin/setup.js",
-    "netlify:login": "netlify login",
-    "netlify:deploy": "netlify deploy -d public -p"
+    "setup": "node ./bin/setup.js"
   }
 }
