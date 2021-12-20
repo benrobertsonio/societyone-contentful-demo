@@ -50,4 +50,28 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       })
     })
   }
+
+  const pages = await graphql(`
+    {
+      allContentfulPage {
+        nodes {
+          id
+        }
+      }
+    }
+  `)
+  const pageTemplate = path.resolve(`./src/templates/page.js`)
+
+
+  pages.data.allContentfulPage.nodes.forEach((node) => {
+    console.log({ node });
+
+    createPage({
+      path: `/page/${node.id}`,
+      component: pageTemplate,
+      context: {
+        id: node.id,
+      },
+    })
+  })
 }

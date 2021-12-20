@@ -25,6 +25,7 @@ const ArticlePreview = ({ posts }) => {
                   __html: post.description.childMarkdownRemark.html,
                 }}
               />
+              <p>{post.author.name}</p>
               <div className={styles.meta}>
                 <small className="meta">{post.publishDate}</small>
                 <Tags tags={post.tags} />
